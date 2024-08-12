@@ -28,7 +28,7 @@ export const ContactEmailHost: React.FC<ContactEmailProps> = ({ name, email, sub
           <Text style={text}>
             <strong>Message:</strong>
           </Text>
-          <Text style={text}>{message} Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure beatae facere natus illo voluptate asperiores maiores cumque, officia consequuntur eum maxime culpa quisquam ipsum. Officia eius accusantium atque deleniti odio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi a earum ullam amet sed, eaque dolore eligendi cum omnis! Obcaecati a modi explicabo commodi laudantium alias reiciendis ullam, aliquid perspiciatis.</Text>
+          <Text style={text}>{message}</Text>
         </Section>
       </Container>
     </Body>

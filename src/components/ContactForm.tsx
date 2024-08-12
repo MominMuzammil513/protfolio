@@ -77,7 +77,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="max-w-2xl w-full mx-auto rounded-none md:rounded-lg p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      <div className="max-w-2xl w-full mx-auto rounded-none md:rounded-lg p-4 md:p-8 shadow-input">
           <form onSubmit={onSubmit} className="px-4 md:px-6 flex flex-col gap-y-4">
             <h1 className="text-white font-semibold text-2xl md:text-3xl">{"Let's get in touch"}</h1>
             <input

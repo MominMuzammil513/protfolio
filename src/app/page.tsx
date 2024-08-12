@@ -1,31 +1,116 @@
-"use client";
-
-import { navItems } from "@/app/data";
-
+"use client"
+import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import About from "@/components/About";
+import RecentProjects from "@/components/RecentProjects";
+import Clients from "@/components/Clients";
+import Experience from "@/components/Experience";
+import Approach from "@/components/Approach";
+import Footer from "@/components/Footer";
+import { FloatingNav } from "@/components/ui/FloatingNavbar";
+import { Spotlight } from "@/components/ui/Spotlight";
+
+const navItems = [
+  { name: "Home", link: "#home" },
+  { name: "About", link: "#about" },
+  { name: "Projects", link: "#projects" },
+  { name: "Experience", link: "#experience" },
+  { name: "Contact", link: "#contact" },
+];
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 const Home = () => {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5 pt-10">
-      <div className="max-w-7xl w-full">
+    <main className="relative text-white min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden pb-8">
+      {/* <div className="absolute inset-0">
+        <Spotlight
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          fill="blue"
+        />
+        <Spotlight
+          className="h-[80vh] w-[50vw] top-10 left-full"
+          fill="purple"
+        />
+      <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:50px_50px] h-screen" /> 
+      </div> */}
+      
+      {/* <div className="absolute w-full px-4"> */}
         <FloatingNav navItems={navItems} />
-        <Hero />
-        {/* <Grid /> */}
-        <About/>
-        <RecentProjects />
-        <Clients />
-        <Experience />
-        <Approach />
-        <Footer />
+      {/* </div> */}
+      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.section
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          id="home"
+          className="pt-20"
+        >
+          <Hero />
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          id="about"
+          className="py-16"
+        >
+          <About />
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          id="projects"
+          className="py-16"
+        >
+          <RecentProjects />
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          className="py-16"
+        >
+          <Clients />
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          id="experience"
+          className="py-16"
+        >
+          <Experience />
+        </motion.section>
+
+        <motion.section
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+          className="py-16"
+        >
+          <Approach />
+        </motion.section>
+      <Footer />
       </div>
+
     </main>
   );
 };
