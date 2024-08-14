@@ -43,6 +43,14 @@ const Home = () => {
       </div> */}
       
       {/* <div className="absolute w-full px-4"> */}
+      {/*  */}
+      {/* 
+      <div
+          // chnage the bg to bg-black-100, so it matches the bg color and will blend in
+           className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
+          bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
+         />
+       </div> */}
         <FloatingNav navItems={navItems} />
       {/* </div> */}
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
